@@ -1,5 +1,5 @@
 # Calorie Hunter
-This app uses a social media API to gather data from influences to target different communities to sell products
+This app uses food data API's to provide the user with more awareness of their food consumption.
 
 User Story: As a user, I want to be more conscious of my diet.
 
