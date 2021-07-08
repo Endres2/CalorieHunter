@@ -1,72 +1,44 @@
-
-//  APIkey = "AIzaSyBcsnjRel5skeOozAeWPlYQHWA6D1skgCI"
-// var googleAPI = function () {
-//     // var apiUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBcsnjRel5skeOozAeWPlYQHWA6D1skgCI&callback=initMap"
-//     var script = document.createElement('script');
-//     apiUrl = script.src = 'https://maps.googleapis.com/maps/api/js?key=' + APIkey + 'allback=initMap';
-//     script.async = true;
-//     fetch(apiUrl)
-//       .then(function (response) {
-//         if (response.ok) {
-//           console.log(response);
-//           response.json().then(function (data) {
-//             // console.log(data); 
-//            console.log(data);
+var myFoodList = ["tomato", "pasta","hamburger"]; //ARAY OF USER INPUT
+var ingredient = [];//ARRAY OF MACROS IN EACH FOOD ITEM FROM myFoodList
+  var getApi = function (foodItem) {
+    
+      fetch("https://api.nal.usda.gov/fdc/v1/foods/search?query="+foodItem+"&pageSize=2&api_key=F6UkbBEMXf9Tv7SeAZsXU1ffIjQCnOMDniO1eteA", {
+    
+  })  
+      .then(function (response) {
+        if (response.ok) {
+          
+          response.json().then(function (data) {
+            for(let i = 0; i<data.foods[0].foodNutrients.length ;i++){
+            if((data.foods[0].foodNutrients[i].nutrientName == "Protein") || (data.foods[0].foodNutrients[i].nutrientName == "Total lipid (fat)") || (data.foods[0].foodNutrients[i].nutrientName =="Carbohydrate, by difference") || (data.foods[0].foodNutrients[i].nutrientName =="Sugars, total including NLEA") || (data.foods[0].foodNutrients[i].nutrientName =="Sodium, Na") || (data.foods[0].foodNutrients[i].nutrientName =="Fatty acids, total saturated") || (data.foods[0].foodNutrients[i].nutrientName =="Energy")){
+            console.log(data.foods[0].foodNutrients[i]); 
+            ingredient.push(data.foods[0].foodNutrients[i].nutrientName, data.foods[0].foodNutrients[i].value);
             
-           
-//             // displayRepos(data, city);
-//           });
-//         } else {
-//           alert('Error: ' + response.statusText);
-//         }
-//       })
-//       .catch(function (error) {
-//         alert('Unable to connect to Google');
-//       });
-//   };
- 
-//   googleAPI()
-  
+          }
+          }
+          
+          });
+        } else {
+          alert('Error: ' + response.statusText);
+        }
+      })
+      .catch(function (error) {
+        alert('Unable to connect to Google');
+      });
+  };
 
-//   fetch('https://instagram28.p.rapidapi.com/user_info?user_name=enzosnokedog', {
-//   method: 'GET',
-//   headers: {
-//     'x-rapidapi-key': 'd7d2bf74a6mshe490645974e1e6cp141a66jsn179e6e884056',
-//     'x-rapidapi-host': 'instagram28.p.rapidapi.com'
-//   } 
-// })
-// .then(response => response.json())
-// .then(data => {
-//   console.log('Success:', data);
-// })
-// .catch((error) => {
-//   console.error('Error:', error);
-// });
+var getCalories = function(){
+  var myFoodObj = {};
+  for(let i = 0; i <myFoodList.length; i++){
+    var foodItem = myFoodList[i];
+    getApi(foodItem);
+      
+    }
+    console.log(ingredient);
+    console.log(myFoodObj);
+  }
 
-var getLatlon = function () {
-  // var apiUrl = "https://maps.googleapis.com/maps/api/js?key=" + AIzaSyBcsnjRel5skeOozAeWPlYQHWA6D1skgCI + "&callback=initMap"
-  fetch("https://api.nal.usda.gov/fdc/v1/foods/search?query=banana&pageSize=2&api_key=F6UkbBEMXf9Tv7SeAZsXU1ffIjQCnOMDniO1eteA", {
-  // method: 'GET',
-  // headers: {
-  //   'x-rapidapi-key': 'd7d2bf74a6mshe490645974e1e6cp141a66jsn179e6e884056',
-  //   'x-rapidapi-host': 'instagram28.p.rapidapi.com'
-  // } 
-})  
-    .then(function (response) {
-      if (response.ok) {
-        // console.log(response);
-        response.json().then(function (data) {
-          console.log(data); 
-         
-          //displayRepos(data, city);
-        });
-      } else {
-        alert('Error: ' + response.statusText);
-      }
-    })
-    .catch(function (error) {
-      alert('Unable to connect to Google');
-    });
-};
-// APIkey = "AIzaSyBcsnjRel5skeOozAeWPlYQHWA6D1skgCI"
- getLatlon()
+ //getApi();
+ getCalories();
+
+ //Protein Fatty acids, total trans/ Carbohydrate, by difference/ Sugars, total including NLEA/ Sodium, Na/ Energy/ Total lipid (fat)/Fatty acids, total saturated/
