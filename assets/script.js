@@ -1,3 +1,4 @@
+
 var myFoodList = ["tomato", "pasta","hamburger"]; //ARAY OF USER INPUT
 var ingredient = [];//ARRAY OF MACROS IN EACH FOOD ITEM FROM myFoodList
   var getApi = function (foodItem) {
@@ -40,5 +41,3 @@ var getCalories = function(){
 
  //getApi();
  getCalories();
-
- //Protein Fatty acids, total trans/ Carbohydrate, by difference/ Sugars, total including NLEA/ Sodium, Na/ Energy/ Total lipid (fat)/Fatty acids, total saturated/

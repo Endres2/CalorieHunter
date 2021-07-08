@@ -1,15 +1,18 @@
-# InfluencerFinder
-This app uses a social media API to gather data from influences to target different communities to sell products
+# Calorie Hunter
+This app uses food data API's to provide the user with more awareness of their food consumption.
 
-User Story: As a user, I want to advertise a product.
-As a user, I want to find influencers that are relevant to my product per my search criteria.
-As a user, I want to search for influencers and order the search results on followers/engagement.
-As a user, I want to click on search results and be taken directly to the influencer's profile for further evaluation.
+User Story: As a user, I want to be more conscious of my diet.
 
-Wireframe:
-https://docs.google.com/presentation/d/1v76bzK6jv7DnY-RGc9xikkWP7y-xXEsQ2pCcoKZZtMo/edit#slide=id.p
+As a user, I want to find the ingedients in a meal or make a meal out of ingredients.
+As a user, I also want to find the macronutrients in that meal.
+As a user, I want to combine these tasks so that when I input ingredients of a meal I will be seamlessly fed macronutrients.
 
-API's: 
-Instagram
-https://developers.facebook.com/docs/instagram-basic-display-api
-https://developers.facebook.com/docs/instagram-api
+Wireframe:https://app.diagrams.net/
+
+
+API's: Spoonacular
+https://spoonacular.com/food-api
+
+USDA Food Data API
+https://fdc.nal.usda.gov/api-guide.html
+
