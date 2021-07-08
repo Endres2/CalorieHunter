@@ -53,6 +53,7 @@ var printInfo = function(){
 
   
 }
+
  //getApi();
  
  var getUserInput = function(event){
