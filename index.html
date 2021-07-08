@@ -10,6 +10,59 @@
         <link rel="stylesheet" href="./assets/styles.css">
     </head>
     <body>
+        <header class="hero">
+            <h1 class="app-title"><i class="fas fa-cloud-sun"></i>Careful Recipe Finder</h1>
+        
+          </header>
+        
+        
+          <main class="flex-row justify-space-between">
+            <div class="col-12 col-md-4">
+        
+              <div class="card">
+                <h3 class="card-header text-uppercase">Enter the ingridients :</h3>
+                <form id="city-form" class="card-body">
+                  <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" placeholder="Tomato"/>
+                  <button type="submit" class="btn">Add to list</button>
+                </form>
+              </div>
+        
+              <div >
+                <h3 id="city" > 
+                </h3>
+              </div>
+            </div>
+        
+            <div class="col-12 col-md-8">
+        
+              <h2 class="subtitle">Meals Suggested : <span id="cityOfWeather"></span></h2>
+              <div id="weathers-container" class="list-group back-border font-size">
+              </div>
+              
+                <div id="weathers-container2" class="list-group col-12 flex-row justify-space-between">
+                  <div id="container1" class=" col-12 col-md-2 back-border">
+        
+                  </div>
+                  <div id="container2" class=" col-12 col-md-2 back-border">
+        
+                  </div>
+                  <div id="container3" class=" col-12 col-md-2 back-border">
+                    
+                  </div>
+                  <div id="container4" class=" col-12 col-md-2 back-border">
+                    
+                  </div>
+                  <div id="container5" class=" col-12 col-md-2 back-border">
+                    
+                  </div>
+                  <div id="container6" class=" col-12 col-md-2 back-border">
+                    
+                  </div>
+                </div>
+              
+            </div>
+            
+          </main>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
