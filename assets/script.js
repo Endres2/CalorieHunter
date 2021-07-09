@@ -1,24 +1,14 @@
-var nameInputEl = document.querySelector('#cityname');
+var nameInputEl = document.querySelector('#ingredientName');
 var userFormEl = document.querySelector('#city-form');
 var weatherContainerEl = document.querySelector('#weathers-container');
 var cityEl = document.querySelector("#city")
 var weatherCityEl = document.querySelector("#cityOfWeather")
-var container1El = document.querySelector("#container1")
-var container2El = document.querySelector("#container2")
-var container3El = document.querySelector("#container3")
-var container4El = document.querySelector("#container4")
-var container5El = document.querySelector("#container5")
-var container6El = document.querySelector("#container6")
-var container7El = document.querySelector("#container6")
-var container8El = document.querySelector("#container6")
-var container9El = document.querySelector("#container6")
-var container10El = document.querySelector("#container6")
-var container11El = document.querySelector("#container6")
-var container12El = document.querySelector("#container6")
+
 
 userFormEl.addEventListener('submit', function(event){
-  // container = "container"+ 1++ +"El";
+  
   event.preventDefault();
+
   var cityname = "'"+nameInputEl.value.trim().toUpperCase()+"'";
   var citynameButton = nameInputEl.value.trim().toUpperCase()
   console.log(cityname);
@@ -119,36 +109,39 @@ function addButton(cityname){
       
       
       
-      
+        var food = document.createElement("div")
+        food.setAttribute("class","col-12 col-md-2 back-border")
+
         var ingredient1 = document.createElement("button")
         ingredient1.setAttribute("class"," btn flex-row justify-center")
-        container1El.appendChild(ingredient1)
+        food.appendChild(ingredient1)
         console.log(cityname);
         ingredient1.textContent = cityname;
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " flex-row")
         ingredient2.textContent = "protein: "+ protein + " g"
-        container1El.appendChild(ingredient2)
+        food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " flex-row")
         ingredient2.textContent = "fat: "+ fat + " g"
-        container1El.appendChild(ingredient2)
+        food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " flex-row")
         ingredient2.textContent = "Carbs: "+ Carbohydrate + " g"
-        container1El.appendChild(ingredient2)
+        food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " flex-row")
         ingredient2.textContent = "Energy: "+ Energy + " g"
-        container1El.appendChild(ingredient2)
+        food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " flex-row")
         ingredient2.textContent = "Sugars: "+ Sugars + " g"
-        container1El.appendChild(ingredient2)
+        food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " flex-row")
         ingredient2.textContent = "Sodium: "+ Sodium + " g"
-        container1El.appendChild(ingredient2)
+        food.appendChild(ingredient2)
+        weatherContainerEl.appendChild(food)
         // var weathers3 = document.createElement("h5")
         // weathers3.setAttribute("class","flex-row padding")
         // container.appendChild(weathers3)
