@@ -123,7 +123,7 @@ function addButton(foodname){
         ingredient1.setAttribute("class"," btn background-white justify-center")
         food.appendChild(ingredient1)
         console.log(foodname);
-        ingredient1.textContent = foodname;
+        ingredient1.textContent = foodname + grams +" g";
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", "  background-white")
         ingredient2.textContent = "protein: "+ (protein/100)*grams + " g"
@@ -159,9 +159,9 @@ function addButton(foodname){
         console.log(recipesData[random]);
         var containerR = document.createElement("div")
         containerR.setAttribute("class","col-md-6 text-align-center")
-        var title = document.createElement("h3")
+        var title = document.createElement("h4")
         title.textContent = recipesData[random].title
-        title.setAttribute("class","text-align-center btn" )
+        title.setAttribute("class","text-align-center btn " )
         
      
         
