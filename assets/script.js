@@ -23,11 +23,18 @@ foodFormEl.addEventListener('submit', function(event){
   getApi(foodname)
   getGrams(grams);
 
+
   addButton(foodnameButton)
   nameInputEl.value = '';
   
   titleGrams.textContent = gramsEl.value;
   gramsEl.value = '';
+
+  addButton(foodnameButton)
+  nameInputEl.value = '';
+  titleGrams.textContent = gramsEl.value;
+  //gramsEl.value = '';
+
 });
 
 recipesFormEl.addEventListener('submit', function(event){
@@ -126,7 +133,11 @@ function addButton(foodname){
         ingredient1.setAttribute("class"," btn background-white justify-center")
         food.appendChild(ingredient1)
         console.log(foodname);
+
         ingredient1.textContent = grams +" g " +foodname ;
+
+        ingredient1.textContent = foodname + grams +" g";
+
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", "  background-white")
         ingredient2.textContent = "protein: "+ ((protein/100)*grams).toFixed(2) + " g"
