@@ -126,27 +126,27 @@ function addButton(foodname){
         ingredient1.textContent = foodname + grams +" g";
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", "  background-white")
-        ingredient2.textContent = "protein: "+ (protein/100)*grams + " g"
+        ingredient2.textContent = "protein: "+ ((protein/100)*grams).toFixed(2) + " g"
         food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " background-white")
-        ingredient2.textContent = "fat: "+ (fat/100)*grams + " g"
+        ingredient2.textContent = "fat: "+ ((fat/100)*grams).toFixed(2) + " g"
         food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " background-white")
-        ingredient2.textContent = "Carbs: "+ (Carbohydrate/100)*grams + " g"
+        ingredient2.textContent = "Carbs: "+ ((Carbohydrate/100)*grams).toFixed(2) + " g"
         food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " background-white")
-        ingredient2.textContent = "Energy: "+ Energy + " kcal"
+        ingredient2.textContent = "Energy: "+ ((Energy/100)*grams).toFixed(2) + " kcal"
         food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " background-white")
-        ingredient2.textContent = "Sugars: "+ (Sugars/100)*grams + " g"
+        ingredient2.textContent = "Sugars: "+ ((Sugars/100)*grams).toFixed(2) + " g"
         food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " background-white")
-        ingredient2.textContent = "Sodium: "+ (Sodium/100)*grams + " mg"
+        ingredient2.textContent = "Sodium: "+ ((Sodium/100)*grams).toFixed(2) + " mg"
         food.appendChild(ingredient2)
         nutrientsContainerEl.appendChild(food)
       }
