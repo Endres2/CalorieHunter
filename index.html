@@ -22,18 +22,18 @@
             <div class="col-12 col-md-4">
         
               <div class="card">
-                <h3 class="card-header text-uppercase">Ingridients :</h3>
+                <h3 class="card-header text-uppercase">Ingridients </h3>
                 <form id="recipes-form" class="card-body">
-                  <label>enter the ingredient you like to find recipes for:</label>
+                  <label>Enter the ingredient you like to find recipes for:</label>
                   <input name="ingredient" id="recipesName" type="text" autofocus="true" class="form-input" placeholder="Tomato"/>
-                  <button type="submit" class="btn">Add <i class="fas fa-plus-square"></i> List</button>
+                  <button type="submit" class="btn">Find Recipes <i class="fas fa-utensils"></i></button>
                 </form>
                 <form id="ingredient-form" class="card-body">
-                  <label>Enter the ingredients 1 by 1 for nutrients :</label>
+                  <label>Enter the ingredient and number of grams to see nutrients :</label>
                   <input name="ingredient" id="ingredientName" type="text" autofocus="true" class="form-input" placeholder="Tomato"/>
-                  <button type="submit" class="btn">Add <i class="fas fa-plus-square"></i> List</button>
+                  <input name="ingredient" id="numberGrams" type="text" autofocus="true" class="form-input" placeholder="0"/>
+                  <button type="submit" class="btn">Check Nutrients <i class="fab fa-nutritionix"></i> </button>
                 </form>
-                
               </div>
         
               <div >
@@ -44,12 +44,12 @@
         
             <div class="col-12 col-md-8">
         
-              <h2 class="subtitle">recipes suggestions based on 3 recipes: </h2>
+              <h2 class="subtitle">Recipes: </h2>
               <div id="recipes-container" class="list-group col-12 flex-row justify-flex-start">
                 
               </div>
 
-              <h2 class="subtitle">Nutrients per 100g: </h2>
+              <h2 class="subtitle">Nutrients: </h2>
               <div id="nutrients-container" class="list-group col-12 flex-row justify-flex-start">
                 
               </div>
@@ -59,12 +59,11 @@
             </div>
             
           </main>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+
         <footer>
           <div></div>
         </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="./assets/script.js" async defer></script>
     </body>
 </html>
