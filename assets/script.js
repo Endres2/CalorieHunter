@@ -1,11 +1,14 @@
 var nameInputEl = document.querySelector('#ingredientName');
 var nameRinputEl = document.querySelector("#recipesName")
 var foodFormEl = document.querySelector('#ingredient-form');
-var  recipesFormEl = document.querySelector('#recipes-form');
+var  gramsFormEl = document.querySelector('#grams-form');
+var gramsEl = document.querySelector("#numberGrams");
 var nutrientsContainerEl = document.querySelector('#nutrients-container');
-var ingredientEl = document.querySelector("#ingredient")
-var recipesContainerEl = document.querySelector('#recipes-container')
-var ingredientRecipesEl = document.querySelector("#ingredientName")
+var ingredientEl = document.querySelector("#ingredient");
+var recipesContainerEl = document.querySelector('#recipes-container');
+var ingredientRecipesEl = document.querySelector("#ingredientName");
+var recipesFormEl = document.querySelector("#recipes-form");
+var titleGrams = document.querySelector("#howManyGrams");
 
 
 foodFormEl.addEventListener('submit', function(event){
@@ -13,11 +16,15 @@ foodFormEl.addEventListener('submit', function(event){
   event.preventDefault();
 
   var foodname = "'"+nameInputEl.value.trim().toUpperCase()+"'";
-  var foodnameButton = nameInputEl.value.trim().toUpperCase()
+  var foodnameButton = nameInputEl.value.trim().toUpperCase();
+  var grams = "'"+gramsEl.value.trim().toUpperCase()+"'";
   ingredient = [];
   getApi(foodname)
+  getGrams(grams);
   addButton(foodnameButton)
   nameInputEl.value = '';
+  titleGrams.textContent = gramsEl.value;
+  //gramsEl.value = '';
 });
 
 recipesFormEl.addEventListener('submit', function(event){
@@ -25,9 +32,15 @@ recipesFormEl.addEventListener('submit', function(event){
   event.preventDefault();
 
   var foodname = "'"+nameRinputEl.value.trim().toUpperCase()+"'";
+  
   getRecipesApi(foodname)
   nameRinputEl.value = '';
 });
+
+function getGrams(grams) {
+  console.log(grams);
+  return grams;
+}
 
 
 var ingredient = [];
@@ -51,7 +64,7 @@ function getApi(foodname) {
           }
           }
           
-          displayNutrient(foodname,ingredient)
+          displayNutrient(foodname,ingredient,getGrams( gramsEl.value))
           
           });
         } else {
@@ -94,15 +107,15 @@ function addButton(foodname){
         
       }
 
-      function displayNutrient(foodname,ingredient){
-
+      function displayNutrient(foodname,ingredient, grams){
+        
         var protein = ingredient[1]
         var fat = ingredient[3]
         var Carbohydrate = ingredient[5]
         var Energy = ingredient[7]
         var Sugars = ingredient[9]
         var Sodium = ingredient[11]
-        
+        console.log(grams);
       
         var food = document.createElement("div")
         food.setAttribute("class","col-12 col-md-2 back-border")
@@ -113,15 +126,15 @@ function addButton(foodname){
         ingredient1.textContent = foodname;
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", "  background-white")
-        ingredient2.textContent = "protein: "+ protein + " g"
+        ingredient2.textContent = "protein: "+ (protein/100)*grams + " g"
         food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " background-white")
-        ingredient2.textContent = "fat: "+ fat + " g"
+        ingredient2.textContent = "fat: "+ (fat/100)*grams + " g"
         food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " background-white")
-        ingredient2.textContent = "Carbs: "+ Carbohydrate + " g"
+        ingredient2.textContent = "Carbs: "+ (Carbohydrate/100)*grams + " g"
         food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " background-white")
@@ -129,11 +142,11 @@ function addButton(foodname){
         food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " background-white")
-        ingredient2.textContent = "Sugars: "+ Sugars + " g"
+        ingredient2.textContent = "Sugars: "+ (Sugars/100)*grams + " g"
         food.appendChild(ingredient2)
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", " background-white")
-        ingredient2.textContent = "Sodium: "+ Sodium + " mg"
+        ingredient2.textContent = "Sodium: "+ (Sodium/100)*grams + " mg"
         food.appendChild(ingredient2)
         nutrientsContainerEl.appendChild(food)
       }
