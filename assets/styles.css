@@ -22,7 +22,9 @@
     color: #314E52;
     line-height: 1.25;
   }
-  
+  header{
+    background-image: url(https://us.123rf.com/450wm/mizina/mizina1909/mizina190900141/129908476-vegetarian-cooking-background-with-seasonal-organic-vegetables-and-grains-on-white-top-view-banner-i.jpg?ver=6);
+  }
   main {
     margin: 20px auto;
     width: 94%;
@@ -45,6 +47,13 @@
     background-color: #F2A154;
     transform: translate(-1px, -1px);
   }
+  .background-white{
+    background-color:#F7F6E7 ;
+    color: #F2A154;
+    margin: 3px;
+    width:90%;
+    padding-left:3px;
+  }
   
    .btn:hover {
     color: #F2A154;
@@ -61,10 +70,10 @@
   }
   
   .app-title {
-    font-size: 2rem;
-    background-color: #F7F6E7;
-    color: #053742;
-    padding: 0 10px;
+    font-size: 3rem;
+    background-color: #F2A154;
+    color: #F7F6E7;
+    padding: 5px 15px;
     display: inline-block;
     border-radius:#053742 ;
   }
@@ -91,6 +100,9 @@
   .text-align{
     text-align: center;
     margin: 100px 0;
+  }
+  .text-align-center{
+    text-align: center;
   }
   .padding{
     padding-bottom: 10px;

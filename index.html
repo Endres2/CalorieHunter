@@ -7,11 +7,13 @@
         <title>Calories Hunter</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
         <link rel="stylesheet" href="./assets/styles.css">
     </head>
     <body>
         <header class="hero">
-            <h1 class="app-title"><i class="fas fa-cloud-sun"></i>Careful Recipe Finder</h1>
+            <h1 class="app-title">Careful Recipe Finder <i class="fas fa-cart-arrow-down"></i></h1>
         
           </header>
         
@@ -20,23 +22,35 @@
             <div class="col-12 col-md-4">
         
               <div class="card">
-                <h3 class="card-header text-uppercase">Enter the ingridients :</h3>
-                <form id="city-form" class="card-body">
-                  <input name="ingredient" id="ingredientName" type="text" autofocus="true" class="form-input" placeholder="Tomato"/>
-                  <button type="submit" class="btn">Add to list</button>
+                <h3 class="card-header text-uppercase">Ingridients :</h3>
+                <form id="recipes-form" class="card-body">
+                  <label>enter the ingredient you like to find recipes for:</label>
+                  <input name="ingredient" id="recipesName" type="text" autofocus="true" class="form-input" placeholder="Tomato"/>
+                  <button type="submit" class="btn">Add <i class="fas fa-plus-square"></i> List</button>
                 </form>
+                <form id="ingredient-form" class="card-body">
+                  <label>Enter the ingredients 1 by 1 for nutrients :</label>
+                  <input name="ingredient" id="ingredientName" type="text" autofocus="true" class="form-input" placeholder="Tomato"/>
+                  <button type="submit" class="btn">Add <i class="fas fa-plus-square"></i> List</button>
+                </form>
+                
               </div>
         
               <div >
-                <h3 id="city" > 
+                <h3 id="ingredient" > 
                 </h3>
               </div>
             </div>
         
             <div class="col-12 col-md-8">
         
-              <h2 class="subtitle">ingredient details for 100g: <span id="cityOfWeather"></span></h2>
-              <div id="weathers-container" class="list-group col-12 flex-row justify-space-between">
+              <h2 class="subtitle">recipes suggestions based on 3 recipes: </h2>
+              <div id="recipes-container" class="list-group col-12 flex-row justify-flex-start">
+                
+              </div>
+
+              <h2 class="subtitle">Nutrients per 100g: </h2>
+              <div id="nutrients-container" class="list-group col-12 flex-row justify-flex-start">
                 
               </div>
               
@@ -48,7 +62,9 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
+        <footer>
+          <div></div>
+        </footer>
         <script src="./assets/script.js" async defer></script>
     </body>
 </html>
