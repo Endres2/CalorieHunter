@@ -27,13 +27,18 @@
                 <form id="recipes-form" class="card-body">
                   <label>Enter the ingredient you like to find recipes for:</label>
                   <input name="ingredient" id="recipesName" type="text" autofocus="true" class="form-input" placeholder="Tomato"/>
-                  <button type="submit" class="btn">Add <i class="fas fa-plus-square"></i> List</button>
+                  <button type="submit" class="btn">Find Recipes <i class="fas fa-utensils"></i></button>
                 </form>
                 <form id="ingredient-form" class="card-body">
-                  <label>Enter the ingredients 1 by 1 for nutrients :</label>
+                  <label>Enter the ingredient and number of grams to see nutrients :</label>
                   <input name="ingredient" id="ingredientName" type="text" autofocus="true" class="form-input" placeholder="Tomato"/>
+
+                  <input name="ingredient" id="numberGrams" type="text" autofocus="true" class="form-input" placeholder="0"/>
+                  <button type="submit" class="btn">Check Nutrients <i class="fab fa-nutritionix"></i> </button>
+
                   <input name="ingredient" id="numberGrams" type="text" autofocus="true" class="form-input" placeholder="100g"/>
                   <button type="submit" class="btn">Add <i class="fas fa-plus-square"></i> List</button>
+
                 </form>
               </div>
         
@@ -45,7 +50,11 @@
         
             <div class="col-12 col-md-8">
         
+
+              <h2 class="subtitle">Recipes: </h2>
+
               <h2 class="subtitle">Recipes </h2>
+
               <div id="recipes-container" class="list-group col-12 flex-row justify-flex-start">
                 
               </div>
@@ -60,9 +69,7 @@
             </div>
             
           </main>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+
         <footer>
           <div></div>
         </footer>

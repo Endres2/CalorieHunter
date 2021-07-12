@@ -19,12 +19,22 @@ foodFormEl.addEventListener('submit', function(event){
   var foodnameButton = nameInputEl.value.trim().toUpperCase();
   var grams = "'"+gramsEl.value.trim().toUpperCase()+"'";
   ingredient = [];
+  
   getApi(foodname)
   getGrams(grams);
+
+
+  addButton(foodnameButton)
+  nameInputEl.value = '';
+  
+  titleGrams.textContent = gramsEl.value;
+  gramsEl.value = '';
+
   addButton(foodnameButton)
   nameInputEl.value = '';
   titleGrams.textContent = gramsEl.value;
   //gramsEl.value = '';
+
 });
 
 recipesFormEl.addEventListener('submit', function(event){
@@ -77,7 +87,7 @@ function getApi(foodname) {
   };
   function getRecipesApi(foodname) {
     
-    fetch('https://api.spoonacular.com/recipes/findByIngredients?apiKey=5cd56897879346feab38b07eb373e484&ingredients='+foodname+"&number=50",{
+    fetch('https://api.spoonacular.com/recipes/findByIngredients?apiKey=40b1f48ac55044009a17dc2c587befba&ingredients='+foodname+"&number=50",{
   
 })  
     .then(function (response) {
@@ -118,12 +128,16 @@ function addButton(foodname){
         console.log(grams);
       
         var food = document.createElement("div")
-        food.setAttribute("class","col-12 col-md-2 back-border")
+        food.setAttribute("class","col-12 col-md-3 back-border")
         var ingredient1 = document.createElement("button")
         ingredient1.setAttribute("class"," btn background-white justify-center")
         food.appendChild(ingredient1)
         console.log(foodname);
+
+        ingredient1.textContent = grams +" g " +foodname ;
+
         ingredient1.textContent = foodname + grams +" g";
+
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", "  background-white")
         ingredient2.textContent = "protein: "+ ((protein/100)*grams).toFixed(2) + " g"
@@ -163,7 +177,6 @@ function addButton(foodname){
         title.textContent = recipesData[random].title
         title.setAttribute("class","text-align-center btn " )
         
-     
         
         var aTag = document.createElement("a")
         aTag.setAttribute("href","https://www.youtube.com/results?search_query="+recipesData[random].title)
@@ -171,54 +184,8 @@ function addButton(foodname){
         var image = document.createElement("img")
         image.setAttribute("src",recipesData[random].image)
         aTag.appendChild(image)
-        
-
-        
-        
-
       
         containerR.appendChild(title)
         containerR.appendChild(aTag)
         recipesContainerEl.appendChild(containerR)
-
-        // var protein = ingredient[1]
-        // var fat = ingredient[3]
-        // var Carbohydrate = ingredient[5]
-        // var Energy = ingredient[7]
-        // var Sugars = ingredient[9]
-        // var Sodium = ingredient[11]
-        
-      
-        // var food = document.createElement("div")
-        // food.setAttribute("class","col-12 col-md-2 back-border")
-        // var ingredient1 = document.createElement("button")
-        // ingredient1.setAttribute("class"," btn background-white justify-center")
-        // food.appendChild(ingredient1)
-        // console.log(foodname);
-        // ingredient1.textContent = foodname;
-        // var ingredient2 = document.createElement("div")
-        // ingredient2.setAttribute("class", "  background-white")
-        // ingredient2.textContent = "protein: "+ protein + " g"
-        // food.appendChild(ingredient2)
-        // var ingredient2 = document.createElement("div")
-        // ingredient2.setAttribute("class", " background-white")
-        // ingredient2.textContent = "fat: "+ fat + " g"
-        // food.appendChild(ingredient2)
-        // var ingredient2 = document.createElement("div")
-        // ingredient2.setAttribute("class", " background-white")
-        // ingredient2.textContent = "Carbs: "+ Carbohydrate + " g"
-        // food.appendChild(ingredient2)
-        // var ingredient2 = document.createElement("div")
-        // ingredient2.setAttribute("class", " background-white")
-        // ingredient2.textContent = "Energy: "+ Energy + " kcal"
-        // food.appendChild(ingredient2)
-        // var ingredient2 = document.createElement("div")
-        // ingredient2.setAttribute("class", " background-white")
-        // ingredient2.textContent = "Sugars: "+ Sugars + " g"
-        // food.appendChild(ingredient2)
-        // var ingredient2 = document.createElement("div")
-        // ingredient2.setAttribute("class", " background-white")
-        // ingredient2.textContent = "Sodium: "+ Sodium + " mg"
-        // food.appendChild(ingredient2)
-        // nutrientsContainerEl.appendChild(food)
       }
