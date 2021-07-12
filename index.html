@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <link rel="stylesheet" href="./assets/styles.css">
     </head>
     <body>
@@ -22,18 +23,18 @@
             <div class="col-12 col-md-4">
         
               <div class="card">
-                <h3 class="card-header text-uppercase">Ingridients :</h3>
+                <h3 class="card-header text-uppercase">Ingridients </h3>
                 <form id="recipes-form" class="card-body">
-                  <label>enter the ingredient you like to find recipes for:</label>
+                  <label>Enter the ingredient you like to find recipes for:</label>
                   <input name="ingredient" id="recipesName" type="text" autofocus="true" class="form-input" placeholder="Tomato"/>
                   <button type="submit" class="btn">Add <i class="fas fa-plus-square"></i> List</button>
                 </form>
                 <form id="ingredient-form" class="card-body">
                   <label>Enter the ingredients 1 by 1 for nutrients :</label>
                   <input name="ingredient" id="ingredientName" type="text" autofocus="true" class="form-input" placeholder="Tomato"/>
+                  <input name="ingredient" id="numberGrams" type="text" autofocus="true" class="form-input" placeholder="100g"/>
                   <button type="submit" class="btn">Add <i class="fas fa-plus-square"></i> List</button>
                 </form>
-                
               </div>
         
               <div >
@@ -44,12 +45,12 @@
         
             <div class="col-12 col-md-8">
         
-              <h2 class="subtitle">recipes suggestions based on 3 recipes: </h2>
+              <h2 class="subtitle">Recipes </h2>
               <div id="recipes-container" class="list-group col-12 flex-row justify-flex-start">
                 
               </div>
 
-              <h2 class="subtitle">Nutrients per 100g: </h2>
+              <h2 class="subtitle">Nutrients per <span id="howManyGrams"></span>g: </h2>
               <div id="nutrients-container" class="list-group col-12 flex-row justify-flex-start">
                 
               </div>
@@ -65,6 +66,7 @@
         <footer>
           <div></div>
         </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="./assets/script.js" async defer></script>
     </body>
 </html>
