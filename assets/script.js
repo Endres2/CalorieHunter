@@ -136,7 +136,6 @@ function addButton(foodname){
 
         ingredient1.textContent = grams +" g " +foodname ;
 
-        ingredient1.textContent = foodname + grams +" g";
 
         var ingredient2 = document.createElement("div")
         ingredient2.setAttribute("class", "  background-white")
